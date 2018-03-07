@@ -33,7 +33,7 @@ gulp.task('sass', function(){
 
 gulp.task('watch', function(){
   return gulp
-  .watch(settings.sourceStyle, 'sass')
+  .watch(settings.sourceStyle, ['sass'])
   .on('change', function(event){
     console.log('File ' + event.path + ' was ' + event.type + ' , running tasks...');
   });
