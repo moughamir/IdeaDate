@@ -4,7 +4,7 @@ const ap         = require('gulp-autoprefixer');
 const clean      = require('gulp-clean-css');
 const sourceMaps = require('gulp-sourcemaps');
 const imageMin   = require('gulp-imagemin');
-//const bsync = require('browserSync');
+const bsync      = require('browser-sync');
 
 const settings = {
   sourceStyle     : 'src/sass/**/*',
@@ -36,6 +36,14 @@ gulp.task('watch', function(){
   .watch(settings.sourceStyle, ['sass'])
   .on('change', function(event){
     console.log('File ' + event.path + ' was ' + event.type + ' , running tasks...');
+  });
+});
+
+gulp.task('sync', function() {  
+  bsync.init([settings.targetStyle+'*.css', 'build/js/*.js'], {
+      server: {
+          baseDir: "./"
+      }
   });
 });
 
