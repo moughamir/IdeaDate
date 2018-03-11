@@ -41,18 +41,18 @@ gulp.task('imagemin', () =>
 
 gulp.task('watch', function(){
   return gulp
-  .watch([settings.sourceStyle, settings.assetsSource], ['sass', 'imagemin'])
+  .watch([settings.sourceStyle], ['sass'])
   .on('change', function(event){
     console.log('File ' + event.path + ' was ' + event.type + ' , running tasks...');
   });
 });
 
 gulp.task('sync', function() {  
-  bsync.init([settings.targetStyle+'*.css', 'build/js/*.js', 'build/*.html', 'build/assets/*.*'], {
+  bsync.init([settings.targetStyle+'*.css', 'build/js/*.js', 'build/*.html'], {
       server: {
           baseDir: "./build/"
       }
   });
 });
 
-gulp.task('default', ['sass', 'imagemin','watch', 'sync']);
+gulp.task('default', ['sass','watch', 'sync']);
