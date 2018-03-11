@@ -1,0 +1,16 @@
+@import "vars";
+@import "utils/mixins";
+@import "utils/reset";
+
+html, body{
+  height: 100%;
+}
+body {
+	background: $appDefaultBg;
+}
+header{
+  background: $primary;
+}
+footer{
+  background: $primary;
+}

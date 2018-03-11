@@ -3,12 +3,14 @@ const sass       = require('gulp-sass');
 const ap         = require('gulp-autoprefixer');
 const clean      = require('gulp-clean-css');
 const sourceMaps = require('gulp-sourcemaps');
-const imageMin   = require('gulp-imagemin');
+const imagemin   = require('gulp-imagemin');
 const bsync      = require('browser-sync');
 
 const settings = {
   sourceStyle     : 'src/sass/**/*',
   targetStyle     : 'build/css/',
+  assetsSource    : 'src/assets/*',
+  assetsTarget    : 'build/assets/',
   sassOptions     : {
     errLogToConsole: true,
     outputStyle: 'expanded'
@@ -31,20 +33,26 @@ gulp.task('sass', function(){
   .pipe(gulp.dest(settings.targetStyle));
 });
 
+gulp.task('imagemin', () =>
+  gulp.src(settings.assetsSource)
+  .pipe(imagemin())
+  .pipe(gulp.dest(settings.assetsTarget))
+);
+
 gulp.task('watch', function(){
   return gulp
-  .watch(settings.sourceStyle, ['sass'])
+  .watch([settings.sourceStyle, settings.assetsSource], ['sass', 'imagemin'])
   .on('change', function(event){
     console.log('File ' + event.path + ' was ' + event.type + ' , running tasks...');
   });
 });
 
 gulp.task('sync', function() {  
-  bsync.init([settings.targetStyle+'*.css', 'build/js/*.js', 'build/*.html'], {
+  bsync.init([settings.targetStyle+'*.css', 'build/js/*.js', 'build/*.html', 'build/assets/*.*'], {
       server: {
           baseDir: "./build/"
       }
   });
 });
 
-gulp.task('default', ['sass', 'watch', 'sync']);
+gulp.task('default', ['sass', 'imagemin','watch', 'sync']);
