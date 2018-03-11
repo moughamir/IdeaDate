@@ -40,11 +40,11 @@ gulp.task('watch', function(){
 });
 
 gulp.task('sync', function() {  
-  bsync.init([settings.targetStyle+'*.css', 'build/js/*.js'], {
+  bsync.init([settings.targetStyle+'*.css', 'build/js/*.js', 'build/*.html'], {
       server: {
-          baseDir: "./"
+          baseDir: "./build/"
       }
   });
 });
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'watch', 'sync']);
