@@ -1,5 +1,7 @@
 // Color Scheme
 $primary: #273042;
 $secondary: #E23943;
-$appDefaultBg: #ffffff;
+$default: #fff;
+$appDefaultBg: $default;
 // Font Face
+$primary-ff: 'Croissant One', cursive;

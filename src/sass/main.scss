@@ -1,16 +1,77 @@
 @import "vars";
 @import "utils/mixins";
 @import "utils/reset";
-
-html, body{
-  height: 100%;
+html,
+body {
+	height: 100%;
 }
+
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background: $appDefaultBg;
 }
-header{
-  background: $primary;
+
+.app {
+	&-header {
+		background: $primary;
+		@include size(100%, 443px);
+		padding: 15px 18px;
+	}
+	&-content {
+		height: inherit;
+	}
+	&-footer {
+		background: $primary;
+		@include size(100%, 150px);
+	}
 }
-footer{
-  background: $primary;
+
+.navbar {
+	@include size(100%, 50px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.menu {
+		//font-family: Avenir-Medium; // TODO: Find this webofonto,
+		@include font-size(16px);
+		color: $default;
+	}
+}
+
+.user {
+	&-picture {
+		@include square(50px);
+		border-radius: 50%;
+		overflow: hidden;
+		img {
+			@include square(100%);
+		}
+	}
+}
+
+.brand {
+	font-family: $primary-ff;
+	@include font-size(30px);
+	color: $default;
+	text-transform: uppercase;
+	span {
+		color: $secondary;
+	}
+}
+
+.business {
+	&-picture {
+		@include square(190px);
+		border-radius: 50%;
+		border: 2px solid $default;
+		overflow: hidden;
+		img {
+			width: auto;
+			height: 100%;
+			margin: 0 -42px; // better to put the image as BG
+		}
+	}
 }
