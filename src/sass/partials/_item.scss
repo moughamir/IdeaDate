@@ -1,0 +1,46 @@
+@import "../vars";
+@import "../utils/mixins";
+.item {
+	@include size(260px, 367px);
+	display: inline-block;
+	&-image {
+		@include size(260px, 300px);
+		border-radius: 4px;
+		overflow: hidden;
+		display: inline-block;
+		position: relative;
+		.navigation {
+			@include size(21px, 38px);
+		}
+		.mask {
+			@include square(100%);
+			position: absolute;
+			z-index: 99;
+			background: transparent;
+			&:hover {
+				background: rgba(0, 0, 0, 0.40);
+			}
+		}
+	}
+	&-name {
+		//font-family: Avenir heavy;  TODO: to be found :3
+		@include font-size(18px);
+		color: $itemName;
+	}
+	&-likes {
+		//font-family: 'Avenir Medium';
+		@include font-size(14px);
+		color: $itemName;
+	}
+}
+
+.like {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	&:hover {
+		#Heart-Icon {
+			fill: $secondary;
+		}
+	}
+}
