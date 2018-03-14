@@ -1,0 +1,11 @@
+@import "../vars";
+@import "../utils/mixins";
+
+.main {
+  &-content{
+    @include respond-to('mobile'){
+       @include size(100vw, auto);
+       padding: 10px 5px;
+    }
+  }
+}

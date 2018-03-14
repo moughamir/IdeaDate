@@ -1,46 +1,67 @@
 @import "../vars";
 @import "../utils/mixins";
 .item {
-	@include size(260px, 367px);
-	display: inline-block;
-	&-image {
-		@include size(260px, 300px);
-		border-radius: 4px;
-		overflow: hidden;
-		display: inline-block;
-		position: relative;
-		.navigation {
-			@include size(21px, 38px);
-		}
-		.mask {
-			@include square(100%);
-			position: absolute;
-			z-index: 99;
-			background: transparent;
-			&:hover {
-				background: rgba(0, 0, 0, 0.40);
-			}
-		}
-	}
-	&-name {
-		//font-family: Avenir heavy;  TODO: to be found :3
-		@include font-size(18px);
-		color: $itemName;
-	}
-	&-likes {
-		//font-family: 'Avenir Medium';
-		@include font-size(14px);
-		color: $itemName;
-	}
+  @include size(260px, 367px);
+  display: inline-block;
+  @include respond-to('mobile') {
+    display: block;
+    margin: 0 auto;
+    @include size(100%, auto);
+  }
+  &-image {
+    @include size(260px, 300px);
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    img{
+      @include square(100%);
+      object-fit: cover;
+    }
+    @include respond-to('mobile') {
+      @include size(100%, auto);
+    }
+    .navigation {
+      @include size(21px, 38px);
+    }
+    .mask {
+      @include square(100%);
+      position: absolute;
+      z-index: 99;
+      background: transparent;
+      &:hover {
+        background: rgba(0, 0, 0, 0.40);
+      }
+    }
+  }
+  &-info {
+    @include respond-to('mobile') {
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6px;
+    }
+  }
+  &-name {
+    //font-family: Avenir heavy;  TODO: to be found :3
+    @include font-size(18px);
+    color: $itemName;
+  }
+  &-likes {
+    //font-family: 'Avenir Medium';
+    @include font-size(14px);
+    color: $itemName;
+  }
 }
 
 .like {
-	position: absolute;
-	right: 20px;
-	top: 20px;
-	&:hover {
-		#Heart-Icon {
-			fill: $secondary;
-		}
-	}
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  &:hover {
+    #Heart-Icon {
+      fill: $secondary;
+    }
+  }
 }

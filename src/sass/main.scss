@@ -3,80 +3,82 @@
 @import "utils/reset";
 html,
 body {
-	height: 100%;
+  height: 100%;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	background: $appDefaultBg;
+  background: $appDefaultBg;
 }
 
 .app {
-	&-header {
-		//background: $primary;
-		@include size(100%, 443px);
+  &-header {
+    //background: $primary;
+    @include size(100%, 443px);
     padding: 15px 18px;
-    background: linear-gradient(-180deg, $primary 0%, rgba(39,48,66,0.54) 43%, $primary 93%), $primary url($assets + "BusinessPageCover.png") no-repeat center;
+    background: linear-gradient(-180deg, $primary 0%, rgba(39, 48, 66, 0.54) 43%, $primary 93%), $primary url($assets + "BusinessPageCover.png") no-repeat center;
     background-size: cover;
-	}
-	&-content {
-		height: inherit;
-	}
-	&-footer {
-		background: $primary;
-		@include size(100%, 150px);
-	}
+  }
+  &-content {
+    //height: inherit;
+    height: auto;
+  }
+  &-footer {
+    background: $primary;
+    @include size(100%, 150px);
+  }
 }
 
 .navbar {
-	@include size(100%, 50px);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	.menu {
-		//font-family: Avenir-Medium; // TODO: Find this webofonto,
-		@include font-size(16px);
-		color: $default;
-	}
+  @include size(100%, 50px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .menu {
+    //font-family: Avenir-Medium; // TODO: Find this webofonto,
+    @include font-size(16px);
+    color: $default;
+  }
 }
 
 .user {
-	&-picture {
-		@include square(50px);
-		border-radius: 50%;
-		overflow: hidden;
-		img {
-			@include square(100%);
-		}
-	}
+  &-picture {
+    @include square(50px);
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      @include square(100%);
+    }
+  }
 }
 
 .brand {
-	font-family: $primary-ff;
-	@include font-size(30px);
-	color: $default;
-	text-transform: uppercase;
-	span {
-		color: $secondary;
-	}
+  font-family: $primary-ff;
+  @include font-size(30px);
+  color: $default;
+  text-transform: uppercase;
+  span {
+    color: $secondary;
+    margin-left: -8px;
+  }
 }
 
 .business {
-	&-picture {
-		@include square(190px);
-		border-radius: 50%;
-		border: 2px solid $default;
-		overflow: hidden;
-		img {
-			width: auto;
-			height: 100%;
-			margin: 0 -42px; // better to put the image as BG
-		}
-	}
+  &-picture {
+    @include square(190px);
+    border-radius: 50%;
+    border: 2px solid $default;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: 100%;
+      margin: 0 -42px; // better to put the image as BG
+    }
+  }
 }
 
-
+@import "partials/main";
 @import "partials/item";
