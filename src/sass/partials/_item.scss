@@ -44,12 +44,12 @@
     }
   }
   &-name {
-    //font-family: Avenir heavy;  TODO: to be found :3
+    font-family: 'Avenir-heavy';
     @include font-size(18px);
     color: $itemName;
   }
   &-likes {
-    //font-family: 'Avenir Medium';
+    font-family: 'Avenir-Medium';
     @include font-size(14px);
     color: $itemName;
   }

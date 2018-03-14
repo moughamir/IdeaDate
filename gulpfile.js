@@ -7,7 +7,7 @@ const imagemin = require('gulp-imagemin');
 const bsync = require('browser-sync');
 
 const settings = {
-  sourceStyle: 'src/sass/**/*',
+  sourceStyle: 'src/sass/main.scss',
   targetStyle: 'build/css/',
   assetsSource: 'src/assets/*',
   assetsTarget: 'build/assets/',
