@@ -1,4 +1,2 @@
-
-
 riot.mount('item');
 

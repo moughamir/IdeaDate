@@ -3,6 +3,7 @@
 
 .main {
   &-content{
+    padding: 20px;
     @include respond-to('mobile'){
        @include size(100vw, auto);
        padding: 10px 5px;
