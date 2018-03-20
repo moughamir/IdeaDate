@@ -3,6 +3,8 @@
 .item {
   @include size(260px, 367px);
   display: inline-block;
+  cursor: pointer;
+  margin: 0 26px 10px 0;
   @include respond-to('mobile') {
     display: block;
     margin: 0 auto;
@@ -14,7 +16,7 @@
     overflow: hidden;
     display: inline-block;
     position: relative;
-    img{
+    img {
       @include square(100%);
       object-fit: cover;
     }

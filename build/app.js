@@ -21,7 +21,7 @@ function initMap() {
     locations = [
       ['$60', { lat: 40.699746, lng: -73.983595 }],
       ['$50', { lat: 40.699751, lng: -73.984626 }],
-      ['$40', { lat: 40.699869, lng: -73.984785 }],
+      ['$40', { lat: 40.699831, lng: -73.984818 }],
       ['$50', { lat: 40.700510, lng: -73.984840 }],
       ['$30', { lat: 40.700530, lng: -73.985447 }],
       ['$30', { lat: 40.698609, lng: -73.985497 }]
@@ -41,5 +41,5 @@ function initMap() {
     places = null;
 
 
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(search);
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(search);
 }
