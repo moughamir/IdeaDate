@@ -2,11 +2,32 @@
 @import "../utils/mixins";
 
 .main {
-  &-content{
+  &-content {
     padding: 20px;
-    @include respond-to('mobile'){
-       @include size(100vw, auto);
-       padding: 10px 5px;
+    @include respond-to('mobile') {
+      @include size(100vw, auto);
+      padding: 10px 5px;
     }
+  }
+}
+
+.content {
+  &-aside {
+    position: relative;
+    @include size(542px, 725px);
+  }
+}
+
+.map {
+  @include square(100%);
+  &-search {
+    padding: 10px 34px;
+    @include size(438px, 50px);
+    margin-top: 10px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+    @include font-size(14px);
+    color: $search;
   }
 }

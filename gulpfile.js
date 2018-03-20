@@ -48,7 +48,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('sync', function() {
-  bsync.init([settings.targetStyle + '*.css', 'build/js/*.js', 'build/*.html'], {
+  bsync.init(['build/css/*.css', 'build/js/*.js', 'build/*.html'], {
     server: {
       baseDir: "./build/"
     },

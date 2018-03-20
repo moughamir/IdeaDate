@@ -31,16 +31,20 @@
     <section class="main-content col-8">
       <item></item>
     </section>
-    <aside class="col-4"></aside>
+    <aside class="content-aside col-4">
+      <input class="map-search" type="text" placeholder="Search for an address">
+      <div class="map" id="map"></div>
+    </aside>
   </main>
   <footer class="app-footer">
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste doloremque, a totam voluptas aperiam deleniti natus, quam et adipisci voluptatem quas ea expedita? Nesciunt aspernatur neque doloribus, fugiat quidem amet.
   </footer>
   <script type="riot/tag" src="item.tag"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/riot@3.9/riot+compiler.min.js"></script>
-  
+
   <script type="text/javascript" src="app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1_WdtNpJttHws5ro0Z5RGrbMv-NTCmZo&libraries=places&callback=initMap">
+  </script>
 </body>
 
 </html>
-
