@@ -10,7 +10,7 @@ function initMap() {
     searchBox = new google.maps.places.SearchBox(search),
     sands = { lat: 40.699819, lng: -73.98486120000001 },
     map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 17,
+      zoom: 18,
       center: sands,
       disableDefaultUI: true,
       zoomControl: true,
@@ -30,11 +30,16 @@ function initMap() {
       url: icon,
       size: new google.maps.Size(41, 59),
       origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(0, 59)
+      anchor: new google.maps.Point(0, 59),
+      labelOrigin: new google.maps.Point(20, 20)
     },
     marker = locations.map(loc => new google.maps.Marker({
       position: loc[1],
-      label: loc[0],
+      label: { 
+        text: loc[0],
+        color: "#fff",
+        fontSize: '20px'
+      },
       icon: image,
       map: map
     })),
