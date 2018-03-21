@@ -37,24 +37,60 @@ body {
 .navbar {
   @include size(100%, 50px);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  position: relative;
   .menu {
     //font-family: Avenir-Medium; // TODO: Find this webofonto,
     @include font-size(16px);
     color: $default;
   }
+  &-topmenu {
+    margin-left: 70px;
+  }
+  &-user {
+    display: flex;
+    align-items: center;
+    &menu {
+      display: inline-block;
+      margin-right: 16px;
+      li {
+        display: inline-block;
+        cursor: pointer;
+        &:hover {
+          filter: drop-shadow(0 0 2px #f2f2f2);
+        }
+      }
+    }
+    &dropdwn {
+      display: inline-block;
+      .dropdown-toggle {
+        padding: 6px;
+        }
+    }
+  }
 }
-
+#um {
+    margin-left: -68px;
+    margin-top: 12px;
+}
 .user {
   &-picture {
     @include square(50px);
     border-radius: 50%;
     overflow: hidden;
+    display: inline-block;
     img {
       @include square(100%);
+      object-fit: cover;
     }
   }
+}
+
+.push-right {
+  display: inline-flex;
+  align-items: center;
+  right: 0;
+  position: absolute;
 }
 
 .brand {
@@ -82,5 +118,8 @@ body {
   }
 }
 
+
 @import "partials/main";
 @import "partials/item";
+@import "partials/menu";
+@import "partials/icons";

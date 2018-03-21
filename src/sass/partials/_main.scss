@@ -1,9 +1,8 @@
-@import "../vars";
-@import "../utils/mixins";
-
 .main {
   &-content {
-    max-width: 860px;
+    width: 60%;
+    display: inline-block;
+    float: inline-start;
     @include respond-to('mobile') {
       @include size(100vw, auto);
       padding: 10px 5px;
@@ -14,7 +13,8 @@
 .content {
   &-aside {
     position: relative;
-    @include size(542px, 725px);
+    display: inline-block;
+    @include size(40%, 725px);
   }
 }
 

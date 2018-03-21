@@ -1,7 +1,6 @@
-@import "../vars";
-@import "../utils/mixins";
 .item {
-  @include size(260px, 367px);
+  @include size(30%, 367px);
+  min-width: 260px;
   display: inline-block;
   cursor: pointer;
   margin: 0 26px 10px 0;
@@ -11,7 +10,8 @@
     @include size(100%, auto);
   }
   &-image {
-    @include size(260px, 300px);
+    min-width: 260px;
+    height: 300px;
     border-radius: 4px;
     overflow: hidden;
     display: inline-block;
@@ -33,6 +33,7 @@
       background: transparent;
       &:hover {
         background: rgba(0, 0, 0, 0.40);
+        .like{display: block;}
       }
     }
   }
@@ -58,6 +59,7 @@
 }
 
 .like {
+  display: none;
   position: absolute;
   right: 20px;
   top: 20px;

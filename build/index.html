@@ -16,36 +16,35 @@
       <div class="brand">Idea
         <span>Date</span>
       </div>
-      <ul class="push-left navbar-topmenu">
-        <li class="button-dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle">
-      Browse <span class="ico ico-xm ico-menu"></span>
-    </a>
+      <ul class="navbar-topmenu">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle" onCLick="dropMenu()">Browse <span class="ico ico-xm ico-menu"></span></a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="#">
-          Browse #1
-        </a>
-            </li>
-            <li>
-              <a href="#">
-          Browse #2
-        </a>
-            </li>
-            <li>
-              <a href="#">
-          Browse #3
-        </a>
-            </li>
+            <li><a href="#">Browse #1</a></li>
+            <li><a href="#">Browse #2</a></li>
+            <li><a href="#">Browse #3</a></li>
           </ul>
         </li>
       </ul>
-      <ul class="push-right navbar-usermenu">
+      <div class="push-right">
+      <ul class="navbar-usermenu">
         <li class="ico ico-sm ico-bell"></li>
         <li class="ico ico-sm ico-fav"></li>
       </ul>
-      <div class="user-picture">
-        <img src="assets/UserProfilPicto.png" alt="User Name">
+      <div class="navbar-user">
+        <div class="user-picture">
+          <img src="assets/UserProfilPicto.png" alt="User Name">
+        </div>
+        <ul class="navbar-userdropdwn">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle" id="dwnb" onCLick="userMenu()"><span class="ico ico-xm ico-menu"></span></a>
+          <ul class="dropdown-menu" id="um">
+            <li><a href="#">Username</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+      </div>
       </div>
     </div>
     <div class="business-info">

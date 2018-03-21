@@ -1,9 +1,31 @@
 /* global riot */ /* global google */
-
+var dropDownMenu = document.querySelectorAll('.dropdown-menu');
+// RiotJs (micro ReactJs alt)
 riot.mount('item');
+// Dropdown function
+window.onclick = function(event) {
+  if (!event.target.matches('.dropdown-toggle')) {
+    var dropdowns = document.getElementsByClassName("dropdown-menu");
+    if (dropdowns[0].classList.contains('active')) {
+      dropdowns[0].classList.remove('active');
+    }
 
-// Google Maps
+  } else if(!event.target.matches('#dwnb')) {
+    if (document.getElementById('um').classList.contains('active')) {
+      document.getElementById('um').classList.remove('active');
+    }
 
+  }
+};
+
+function dropMenu() {
+  dropDownMenu[0].classList.toggle("active");
+}
+function userMenu() {
+  document.getElementById('um').classList.toggle("active");
+}
+
+// Google Maps API
 function initMap() {
   var icon = 'assets/marker.png',
     search = document.getElementsByClassName('map-search')[0],
@@ -35,7 +57,7 @@ function initMap() {
     },
     marker = locations.map(loc => new google.maps.Marker({
       position: loc[1],
-      label: { 
+      label: {
         text: loc[0],
         color: "#fff",
         fontSize: '20px'
@@ -44,7 +66,5 @@ function initMap() {
       map: map
     })),
     places = null;
-
-
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(search);
 }
