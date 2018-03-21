@@ -57,3 +57,7 @@ $extra-large : 1440px;
   @include size($size, $size);
 }
 
+// Icons
+@function icon($name){
+  @return $assets + 'ico-' + $name + '.png';
+}

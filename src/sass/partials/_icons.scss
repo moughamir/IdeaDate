@@ -1,0 +1,24 @@
+//Icons gen
+.ico {
+  background: transparent center no-repeat;
+  background-size: contain;
+  @each $ni in $icons {
+    &-#{$ni} {
+      background-image: url(icon(#{$ni}));
+    }
+  } // icons size
+  &-xm {
+    @include size(15px,
+    9px);
+  }
+  &-sm {
+    @include square(20px);
+  }
+  &-md {
+    @include size(21px,
+    38px);
+  }
+  &-lg {
+    @include square(42px);
+  }
+}
