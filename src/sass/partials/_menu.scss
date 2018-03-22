@@ -1,13 +1,7 @@
-
 .dropdown {
   position: relative;
-  a {
-    display: block;
-    color: $default;
-    background-color: $primary;
-    padding: 10px 20px;
-    text-decoration: none;
-  }
+  font-family: $avenir-medium;
+  @include font-size(16px);
   &-menu {
     display: none;
     position: absolute;
@@ -16,14 +10,40 @@
     margin: 0;
     margin-top: 3px;
     text-align: left;
-   &.active {
-     display: block;
+    box-shadow: 0 -1px 4px 0;
+    width: 200px;
+    border-radius: 4px;
+    li a {
+      display: block;
+      color: $default;
+      background-color: $primary;
+      padding: 10px 20px;
+      text-decoration: none;
     }
-}
-&-toggle {
+    &.active {
+      display: block;
+    }
+  }
+  &-toggle {
+    display: block;
+    color: $default;
+    background-color: transparent;
+    padding: 10px 20px;
+    text-decoration: none;
+    &:hover {
+      box-shadow: 0px 0px 2px $primary;
+    }
     .ico {
       display: inline-block;
       margin-left: 5px;
     }
   }
+}
+
+// user menu
+#um {
+  position: absolute;
+  left: unset;
+  right: 0;
+  top: 41px;
 }
