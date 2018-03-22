@@ -10,7 +10,7 @@
       <img src="{ picture }" alt="{ name }">
     </figure>
     <div class="item-info">
-      <div class="item-name">{ name }</div>
+      <div class="item-name">{ name } <span class="item-rating"><i class="ico ico-star"></i> { rating }</span></div>
       <div class="item-likes">{ likes } likes</div>
     </div>
   </article>

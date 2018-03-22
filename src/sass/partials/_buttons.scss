@@ -1,0 +1,26 @@
+.btn {
+  border: none;
+  padding: 0;
+  &-default {
+    background-color: $secondary;
+    @include size(107px, 40px);
+    border-radius: 20px;
+    font-family: $avenir-medium;
+    color: $default;
+    @include font-size(18px);
+    margin-right: 17px;
+    &:hover{
+      background-color: lighten($secondary, 5%);
+    }
+  }
+  &-settings {
+    background: transparent;
+    margin-right: 20px;
+    &:hover{
+      filter: drop-shadow(0 0 2px #000);
+    }
+    .ico {
+      display: block;
+    }
+  }
+}

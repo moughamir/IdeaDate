@@ -6,8 +6,11 @@ $appDefaultBg: $default;
 $itemName: #252525;
 $search: #7f7f7f;
 // Font Face
+$avenir-light: 'Avenir-Light', sans-serif;
+$avenir-medium: 'Avenir-Medium', sans-serif;
+$avenir-heavy: 'Avenir-Heavy', sans-serif;
 $primary-ff: 'Croissant One', cursive;
-$secondary-ff: 'Avenir heavy', sans-serif;
+$secondary-ff: $avenir-heavy;
 // Folders
 $assets: '/assets/';
 // Icons
