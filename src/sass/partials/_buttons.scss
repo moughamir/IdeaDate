@@ -1,6 +1,7 @@
 .btn {
   border: none;
   padding: 0;
+  cursor: pointer;
   &-default {
     background-color: $secondary;
     @include size(107px, 40px);
@@ -9,14 +10,14 @@
     color: $default;
     @include font-size(18px);
     margin-right: 17px;
-    &:hover{
+    &:hover {
       background-color: lighten($secondary, 5%);
     }
   }
   &-settings {
     background: transparent;
     margin-right: 20px;
-    &:hover{
+    &:hover {
       filter: drop-shadow(0 0 2px #000);
     }
     .ico {

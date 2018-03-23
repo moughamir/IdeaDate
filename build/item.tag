@@ -1,6 +1,9 @@
 <item>
-
   <article class="item" each={ items }>
+    <nav class="item-slid">
+      <div class="ico ico-md ico-prev"></div>
+      <div class="ico ico-md ico-next"></div>
+    </nav>
     <figure class="item-image">
       <div class="mask">
         <svg xmlns="http://www.w3.org/2000/svg" class="like" viewBox="0 0 30 30">
@@ -12,6 +15,7 @@
     <div class="item-info">
       <div class="item-name">{ name } <span class="item-rating"><i class="ico ico-star"></i> { rating }</span></div>
       <div class="item-likes">{ likes } likes</div>
+
     </div>
   </article>
   <script>
@@ -19,36 +23,42 @@
         "_id": "5aa97299c34ec7d5203a9740",
         "picture": "assets/items/Asiate.png",
         "name": "Asiate",
+        "rating": "4.5",
         "likes": "400k"
       },
       {
         "_id": "5aa97299e2c5526afbd42a0f",
         "picture": "assets/items/BlueHill.png",
         "name": "Blue Hill",
+        "rating": "5.5",
         "likes": "900k"
       },
       {
         "_id": "5aa972999f04260b08593628",
         "picture": "assets/items/JeanGeorges.png",
         "name": "Jean Georges",
+        "rating": "5.5",
         "likes": "900k"
       },
       {
         "_id": "5aa972998390ef0f1d92db26",
         "picture": "assets/items/Petrossian.png",
         "name": "Petrossian",
+        "rating": "4.4",
         "likes": "670"
       },
       {
         "_id": "5aa97299c99d64ec25f73bc5",
         "picture": "assets/items/AbcKitchen.png",
         "name": "ABC Kitchen",
+        "rating": "3.5",
         "likes": "100k"
       },
       {
         "_id": "5aa97299a586985f307a6029",
         "picture": "assets/items/OC.png",
         "name": "OC",
+        "rating": "4.5",
         "likes": "300k"
       }
     ]

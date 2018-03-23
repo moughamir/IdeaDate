@@ -5,20 +5,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Idea Date Restaurnat</title>
+  <title>Idea Date Restaurant</title>
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Croissant+One" rel="stylesheet">
 </head>
 
 <body class="app">
+  <div class="mobile-toggle">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+  </div>
+  <div class="mobile-section">
+    <div class="mobile-content">
+      <div class="user-picture">
+        <img src="assets/UserProfilPicto.png" alt="User Name">
+      </div>
+      <h2 class="username">User Name</h2>
+      <ul class="navbar-usermenu">
+        <li class="ico ico-sm ico-bell"></li>
+        <li class="ico ico-sm ico-fav"></li>
+      </ul>
+      <nav>
+        <ul>
+          <li class="navbar-menuitem active"><a href="#">Affordable</a></li>
+          <li class="navbar-menuitem"><a href="#">Fancy</a></li>
+          <li class="navbar-menuitem"><a href="#">Tips</a></li>
+          <li class="navbar-menuitem"><a href="#">Community</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
   <header class="app-header">
+
     <div class="navbar">
       <div class="brand">Idea
         <span>Date</span>
       </div>
       <ul class="navbar-topmenu">
         <li class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle" onCLick="dropMenu()">Browse <span class="ico ico-xm ico-menu"></span></a>
+          <a href="javascript:void(0)" class="dropdown-toggle" onCLick="dropMenu()">Browse <i class="ico ico-xm ico-menu"></i></a>
           <ul class="dropdown-menu">
             <li><a href="#">Browse #1</a></li>
             <li><a href="#">Browse #2</a></li>
@@ -27,24 +53,24 @@
         </li>
       </ul>
       <div class="push-right">
-      <ul class="navbar-usermenu">
-        <li class="ico ico-sm ico-bell"></li>
-        <li class="ico ico-sm ico-fav"></li>
-      </ul>
-      <div class="navbar-user">
-        <div class="user-picture">
-          <img src="assets/UserProfilPicto.png" alt="User Name">
-        </div>
-        <ul class="navbar-userdropdwn">
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle" id="dwnb" onCLick="userMenu()"><span class="ico ico-xm ico-menu"></span></a>
-          <ul class="dropdown-menu" id="um">
-            <li><a href="#">Username</a></li>
-            <li><a href="#">Logout</a></li>
+        <ul class="navbar-usermenu">
+          <li class="ico ico-sm ico-bell"></li>
+          <li class="ico ico-sm ico-fav"></li>
+        </ul>
+        <div class="navbar-user">
+          <div class="user-picture">
+            <img src="assets/UserProfilPicto.png" alt="User Name">
+          </div>
+          <ul class="navbar-userdropdwn">
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropdown-toggle" id="dwnb" onCLick="userMenu()"><i class="ico ico-xm ico-menu"></i></a>
+              <ul class="dropdown-menu" id="um">
+                <li><a href="#">Username</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
-      </div>
+        </div>
       </div>
     </div>
     <div class="business-info">
@@ -57,9 +83,28 @@
         <span class="business-followers">6M Followers</span>
         <aside class="business-actions">
           <button class="btn btn-default" name="follow">Follow</button>
-          <button class="btn btn-settings" name="settings"><span class="ico ico-lg ico-cog"></span></button>
+          <button class="btn btn-settings" name="settings"><i class="ico ico-lg ico-cog"></i></button>
         </aside>
       </div>
+    </div>
+    <div class="navbar navbar-bottom">
+      <ul class="navbar-botmenu">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle" id="filtermenu" onCLick="filter()">Popular<i class="ico ico-xm ico-menu"></i></a>
+          <ul class="dropdown-menu" id="filter">
+            <li><a href="#">Editor choice</a></li>
+            <li><a href="#">New</a></li>
+          </ul>
+        </li>
+      </ul>
+      <nav class="navbar-menu">
+        <ul>
+          <li class="navbar-menuitem active"><a href="#">Affordable</a></li>
+          <li class="navbar-menuitem"><a href="#">Fancy</a></li>
+          <li class="navbar-menuitem"><a href="#">Tips</a></li>
+          <li class="navbar-menuitem"><a href="#">Community</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
   <main class="app-content">
@@ -74,8 +119,8 @@
   </main>
   <footer class="app-footer">
     <div class="brand">Idea
-        <span>Date</span>
-      </div>
+      <span>Date</span>
+    </div>
   </footer>
   <script type="riot/tag" src="item.tag"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/riot@3.9/riot+compiler.min.js"></script>

@@ -1,3 +1,89 @@
+.navbar {
+  @include size(100%, 50px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  .menu {
+    font-family: $avenir-medium;
+    @include font-size(16px);
+    color: $default;
+  }
+  &-topmenu {
+    margin-left: 70px;
+    @include respond-to('mobile') {
+      display: none;
+    }
+  }
+  &-botmenu {
+    margin-left: 0;
+  }
+  &-user {
+    display: flex;
+    align-items: center;
+    @include respond-to('mobile') {
+      display: none;
+    }
+    &menu {
+      display: inline-block;
+      margin-right: 16px;
+      @include respond-to('mobile') {
+        display: none;
+      }
+      li {
+        display: inline-block;
+        cursor: pointer;
+        &:hover {
+          filter: drop-shadow(0 0 2px #f2f2f2);
+        }
+      }
+    }
+    &dropdwn {
+      display: inline-block;
+      .dropdown-toggle {
+        padding: 6px;
+      }
+    }
+  }
+  &-bottom {
+    position: absolute;
+    bottom: 0;
+    margin: 0 -20px;
+    padding: 20px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-menu {
+    @include respond-to('mobile') {
+      display: none;
+    }
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    &item {
+      display: inline-block;
+      color: $default;
+      @include font-size(16px);
+      font-family: $avenir-medium;
+      text-transform: uppercase;
+      padding: 15px;
+      cursor: pointer;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      &.active {
+        color: $secondary;
+        border-bottom: 4px solid;
+      }
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
 .dropdown {
   position: relative;
   font-family: $avenir-medium;
@@ -22,6 +108,7 @@
     }
     &.active {
       display: block;
+      z-index: 999;
     }
   }
   &-toggle {
@@ -46,4 +133,90 @@
   left: unset;
   right: 0;
   top: 41px;
+}
+
+.mobile {
+  &-section {
+    &.on {
+      display: block;
+      transition-duration: 0.3s;
+    }
+    display: none;
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background: #273042;
+    .navbar-menuitem {
+      display: block;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+  }
+  &-toggle {
+    display: none;
+    @include respond-to('mobile') {
+      display: block;
+    }
+    @include size(40px, 30px);
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+    z-index: 101;
+    filter: drop-shadow(0 0 2px #3c3c3c);
+    &.on {
+      .one {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+
+      .two {
+        opacity: 0;
+      }
+
+      .three {
+        transform: rotate(-45deg) translate(8px, -10px);
+      }
+    }
+  }
+  &-content {
+    margin-top: 26px;
+    .user-picture {
+      display: block;
+      margin: 0 auto;
+    }
+    .navbar-usermenu {
+      display: flex;
+      margin: 8px auto;
+      justify-content: space-evenly;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-left: 0;
+      border-right: 0;
+      padding: 12px;
+      li {
+        display: inline-block;
+        cursor: pointer;
+        padding: 15px;
+      }
+    }
+    .username {
+      color: $default;
+      font-family: $avenir-heavy;
+      text-align: center;
+      text-transform: capitalize;
+      margin: 15px 0;
+      @include font-size(20px);
+    }
+  }
+}
+
+.one,
+.two,
+.three {
+  @include size(100%, 5px);
+  background: $default;
+  margin: 6px auto;
+  backface-visibility: hidden;
+  transition-duration: 0.3s;
+  border-radius: 2px;
 }

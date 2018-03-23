@@ -22,12 +22,19 @@ body {
     background: linear-gradient(-180deg, $primary 0%, rgba(39, 48, 66, 0.54) 43%, $primary 93%), $primary url($assets + "BusinessPageCover.png") no-repeat center;
     background-size: cover;
     position: relative;
+    @include respond-to('mobile') {
+      height: 100vh;
+    }
   }
   &-content {
     height: auto;
     display: flex;
     padding: 20px;
     justify-content: space-evenly;
+    @include respond-to('mobile') {
+      padding: 20px 0;
+      flex-direction: column;
+    }
   }
   &-footer {
     background: $primary;
@@ -35,49 +42,18 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    @include respond-to('mobile') {
+      justify-content: center;
+    }
     .brand {
       left: 50px;
       position: absolute;
-    }
-  }
-}
-
-.navbar {
-  @include size(100%, 50px);
-  display: flex;
-  align-items: center;
-  position: relative;
-  .menu {
-    //font-family: Avenir-Medium; // TODO: Find this webofonto,
-    @include font-size(16px);
-    color: $default;
-  }
-  &-topmenu {
-    margin-left: 70px;
-  }
-  &-user {
-    display: flex;
-    align-items: center;
-    &menu {
-      display: inline-block;
-      margin-right: 16px;
-      li {
-        display: inline-block;
-        cursor: pointer;
-        &:hover {
-          filter: drop-shadow(0 0 2px #f2f2f2);
-        }
-      }
-    }
-    &dropdwn {
-      display: inline-block;
-      .dropdown-toggle {
-        padding: 6px;
+      @include respond-to('mobile') {
+        position: unset;
       }
     }
   }
 }
-
 
 
 .user {
@@ -98,6 +74,9 @@ body {
   align-items: center;
   right: 0;
   position: absolute;
+  @include respond-to('mobile') {
+    display: none;
+  }
 }
 
 .brand {
@@ -122,6 +101,14 @@ body {
     width: 100%;
     margin-left: -19px;
     padding: 0 20px;
+    @include respond-to('mobile') {
+      flex-direction: column;
+      top: 50%;
+      transform: translateY(-50%);
+      height: calc(100vh - 130px);
+      margin: 0 -19px;
+      padding-top: 30px;
+    }
   }
   &-picture {
     @include square(190px);
@@ -133,34 +120,52 @@ body {
       height: 100%;
       margin: 0 -42px; // better to put the image as BG
     }
+    @include respond-to('mobile') {
+      @include square(120px);
+    }
   }
   &-heading {
     color: $default;
     padding-left: 35px;
+    @include respond-to('mobile') {
+      padding: 0;
+    }
   }
-  &-name{
+  &-name {
     font-family: $primary-ff;
     @include font-size(50px);
     padding-bottom: 20px;
     text-transform: capitalize;
+    @include respond-to('mobile') {
+      @include font-size(22px);
+      text-align: center;
+      padding: 15px 0;
+    }
   }
   &-description {
-    font-family: $secondary-ff;
+    font-family: $avenir-medium;
     @include font-size(20px);
-    padding-bottom: 10px;
-    font-weight: 500;
+    padding: 10px 0;
+    @include respond-to('mobile') {
+      padding: 0;
+    }
   }
   &-followers {
-    font-family: $secondary-ff;
+    font-family: $avenir-medium;
     @include font-size(14px);
     text-transform: uppercase;
+    @include respond-to('mobile') {
+      @include font-size(12px);
+      position: absolute;
+      bottom: 15px;
+    }
   }
   &-actions {
     display: flex;
     position: absolute;
     right: 0;
     bottom: 0;
-}
+  }
 }
 
 @import "partials/main";

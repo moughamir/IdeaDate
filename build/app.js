@@ -1,5 +1,6 @@
 /* global riot */ /* global google */
 var dropDownMenu = document.querySelectorAll('.dropdown-menu');
+var mobileMenu = document.querySelectorAll('.mobile-toggle');
 // RiotJs (micro ReactJs alt)
 riot.mount('item');
 // Dropdown function
@@ -10,17 +11,37 @@ window.onclick = function(event) {
       dropdowns[0].classList.remove('active');
     }
 
-  } else if(!event.target.matches('#dwnb')) {
+  }
+  else if (!event.target.matches('#dwnb')) {
     if (document.getElementById('um').classList.contains('active')) {
       document.getElementById('um').classList.remove('active');
     }
 
   }
+  else if (!event.target.matches('#filtermenu')) {
+    if (document.getElementById('filter').classList.contains('active')) {
+      document.getElementById('filter').classList.remove('active');
+    }
+  }
 };
+// Toggle hamburger menu :P
+[].forEach.call(document.querySelectorAll('.mobile-toggle'), function(el) {
+  el.addEventListener('click', function() {
+    console.log('test')
+    mobileMenu[0].classList.toggle("on");
+    document.querySelectorAll('.mobile-section')[0].classList.toggle("on");
+    console.log('menu');
+  })
+})
 
 function dropMenu() {
   dropDownMenu[0].classList.toggle("active");
 }
+
+function filter() {
+  document.getElementById('filter').classList.toggle("active");
+}
+
 function userMenu() {
   document.getElementById('um').classList.toggle("active");
 }

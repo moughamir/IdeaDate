@@ -15,6 +15,10 @@
     position: relative;
     display: inline-block;
     @include size(40%, 725px);
+    @include respond-to('mobile') {
+      width: 100vw;
+      padding: 0 7px;
+    }
   }
 }
 
@@ -22,6 +26,7 @@
   @include square(100%);
   &-search {
     padding: 10px 34px;
+    max-height: 438px;
     @include size(438px, 50px);
     margin-top: 10px;
     border-radius: 25px;
@@ -29,5 +34,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
     @include font-size(14px);
     color: $search;
+    @include respond-to('mobile') {
+      width: 80%;
+      margin-left: 20px;
+    }
   }
 }

@@ -4,10 +4,20 @@
   display: inline-block;
   cursor: pointer;
   margin: 0 26px 10px 0;
+  position: relative;
+  &:hover {
+    .item-slid {
+      display: flex;
+    }
+  }
   @include respond-to('mobile') {
     display: block;
     margin: 0 auto;
     @include size(100%, auto);
+  }
+  @include respond-to('desktop') {
+    min-width: 245px;
+    margin: 0px 12px 10px 0;
   }
   &-image {
     min-width: 260px;
@@ -23,6 +33,9 @@
     @include respond-to('mobile') {
       @include size(100%, auto);
     }
+    @include respond-to('desktop') {
+      min-width: 250px;
+    }
     .navigation {
       @include size(21px, 38px);
     }
@@ -33,28 +46,59 @@
       background: transparent;
       &:hover {
         background: rgba(0, 0, 0, 0.40);
-        .like{display: block;}
+        .like {
+          display: block;
+        }
       }
     }
   }
   &-info {
+    position: absolute;
+    @include size(100%, 47px);
+    bottom: 5px;
     @include respond-to('mobile') {
       min-height: 60px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 6px;
+      position: relative;
     }
   }
   &-name {
-    font-family: 'Avenir-heavy';
+    font-family: $avenir-heavy;
     @include font-size(18px);
     color: $itemName;
+    line-height: 1.5;
   }
   &-likes {
-    font-family: 'Avenir-Medium';
+    font-family: $avenir-light;
     @include font-size(14px);
     color: $itemName;
+  }
+  &-rating {
+    @include font-size(14px);
+    color: $rating;
+    font-family: $avenir-medium;
+    .ico {
+      display: inline-block;
+      @include square(13px);
+    }
+  }
+  &-slid {
+    display: none;
+    @include size(100%, 38px);
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    z-index: 100;
+    justify-content: space-between;
+    .ico {
+      margin: 0 5px;
+      &:hover {
+        filter: drop-shadow(0 0 2px);
+      }
+    }
   }
 }
 
