@@ -2,6 +2,7 @@
   "name": "ideadate",
   "version": "0.0.1",
   "main": "index.js",
+  "site": "https://hfc-oz.herokuapp.com/"
   "author": "Moughamir Mohamed <moughamir@gmail.com>",
   "license": "UNLICENCED",
   "private": true,
