@@ -110,7 +110,7 @@
   <main class="app-content">
 
     <section class="main-content col-8">
-      <item></item>
+      <div id="items"></div>
     </section>
     <aside class="content-aside col-4">
       <input class="map-search" type="text" placeholder="Search for an address">
@@ -122,9 +122,6 @@
       <span>Date</span>
     </div>
   </footer>
-  <script type="riot/tag" src="item.tag"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/riot@3.9/riot+compiler.min.js"></script>
-
   <script type="text/javascript" src="app.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1_WdtNpJttHws5ro0Z5RGrbMv-NTCmZo&libraries=places&callback=initMap">
   </script>
